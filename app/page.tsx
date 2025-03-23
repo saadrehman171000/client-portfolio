@@ -72,20 +72,17 @@ export default function Home() {
               <Link href="#about" className={`${styles.navLink} ${activeSection === "about" ? styles.active : ""}`}>
                 About
               </Link>
-              <Link
-                href="#services"
-                className={`${styles.navLink} ${activeSection === "services" ? styles.active : ""}`}
-              >
+              <Link href="#services" className={`${styles.navLink} ${activeSection === "services" ? styles.active : ""}`}>
                 Services
               </Link>
-              <Link href="#works" className={`${styles.navLink} ${activeSection === "works" ? styles.active : ""}`}>
+              <Link href="/projects" className={styles.navLink}>
                 Portfolio
               </Link>
-              <Link
-                href="#testimonials"
-                className={`${styles.navLink} ${activeSection === "testimonials" ? styles.active : ""}`}
-              >
+              <Link href="#testimonials" className={`${styles.navLink} ${activeSection === "testimonials" ? styles.active : ""}`}>
                 Testimonials
+              </Link>
+              <Link href="/pricing" className={styles.navLink}>
+                Pricing
               </Link>
               <Link href="#contact" className={`${styles.navLink} ${activeSection === "contact" ? styles.active : ""}`}>
                 Contact
@@ -164,34 +161,18 @@ export default function Home() {
             <Link href="#services" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
               Services
             </Link>
-            <Link href="#works" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+            <Link href="/projects" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
               Portfolio
             </Link>
             <Link href="#testimonials" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
               Testimonials
             </Link>
+            <Link href="/pricing" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
+              Pricing
+            </Link>
             <Link href="#contact" className={styles.mobileNavLink} onClick={toggleMobileMenu}>
               Contact
             </Link>
-            <Button className={styles.mobileMenuButton} isGradient>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className={styles.buttonIcon}
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Download Resume
-            </Button>
           </nav>
         </div>
       )}
@@ -216,28 +197,26 @@ export default function Home() {
                   reviews that help scholars and professionals communicate their ideas effectively.
                 </p>
                 <div className={styles.heroButtons}>
-                  <Button 
-                    size="lg" 
-                    isGradient 
-                    onClick={() => scrollToSection('works')}
-                  >
-                    View My Portfolio
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className={styles.buttonIconRight}
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Button>
+                  <Link href="/projects" className={styles.buttonLink}>
+                    <Button size="lg" isGradient>
+                      View My Portfolio
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className={styles.buttonIconRight}
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </Button>
+                  </Link>
                   <Button 
                     variant="outline" 
                     size="lg"
@@ -734,24 +713,26 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.sectionCta}>
-              <Button isGradient>
-                View All Projects
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className={styles.buttonIconRight}
-                >
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </Button>
+              <Link href="/projects" className={styles.buttonLink}>
+                <Button isGradient>
+                  View All Projects
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={styles.buttonIconRight}
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -1116,11 +1097,14 @@ export default function Home() {
                     <Link href="#services" className={styles.footerLink}>
                       Services
                     </Link>
-                    <Link href="#works" className={styles.footerLink}>
+                    <Link href="/projects" className={styles.footerLink}>
                       Portfolio
                     </Link>
                     <Link href="#testimonials" className={styles.footerLink}>
                       Testimonials
+                    </Link>
+                    <Link href="/pricing" className={styles.footerLink}>
+                      Pricing
                     </Link>
                     <Link href="#contact" className={styles.footerLink}>
                       Contact
@@ -1128,19 +1112,13 @@ export default function Home() {
                   </nav>
                 </div>
                 <div className={styles.footerLinkGroup}>
-                  <h4 className={styles.footerLinkTitle}>Services</h4>
+                  <h4 className={styles.footerLinkTitle}>Legal</h4>
                   <nav className={styles.footerNav}>
-                    <Link href="#" className={styles.footerLink}>
-                      Thesis Writing
+                    <Link href="/terms" className={styles.footerLink}>
+                      Terms of Service
                     </Link>
-                    <Link href="#" className={styles.footerLink}>
-                      Research Papers
-                    </Link>
-                    <Link href="#" className={styles.footerLink}>
-                      Business Reports
-                    </Link>
-                    <Link href="#" className={styles.footerLink}>
-                      Editing Services
+                    <Link href="/privacy" className={styles.footerLink}>
+                      Privacy Policy
                     </Link>
                   </nav>
                 </div>
@@ -1151,10 +1129,10 @@ export default function Home() {
                 &copy; {new Date().getFullYear()} Wareesha Faisal. All rights reserved.
               </p>
               <div className={styles.footerBottomLinks}>
-                <Link href="#" className={styles.footerBottomLink}>
+                <Link href="/terms" className={styles.footerBottomLink}>
                   Terms of Service
                 </Link>
-                <Link href="#" className={styles.footerBottomLink}>
+                <Link href="/privacy" className={styles.footerBottomLink}>
                   Privacy Policy
                 </Link>
               </div>
