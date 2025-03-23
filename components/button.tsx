@@ -15,7 +15,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     { variant = "primary", size = "md", children, className = "", asChild = false, isGradient = false, ...props },
     ref,
   ) => {
-    const Comp = asChild ? React.Fragment : "button"
     const buttonContent = (
       <button
         className={`${styles.button} ${styles[variant]} ${styles[size]} ${isGradient ? styles.gradient : ""} ${className}`}

@@ -10,6 +10,9 @@ import { Logo } from "@/components/logo"
 import { SectionHeading } from "@/components/section-heading"
 import styles from "./page.module.css"
 
+// Add type definition at the top
+type BadgeVariant = 'default' | 'secondary' | 'accent';
+
 // Project data
 const projects = [
   {
@@ -272,7 +275,7 @@ export default function ProjectsPage() {
                       className={styles.projectImage}
                     />
                     <div className={styles.projectImageOverlay}></div>
-                    <Badge className={styles.projectBadge} variant={project.badgeVariant as any}>
+                    <Badge className={styles.projectBadge} variant={project.badgeVariant as BadgeVariant}>
                       {project.category}
                     </Badge>
                   </div>
@@ -289,7 +292,7 @@ export default function ProjectsPage() {
             <div className={styles.ctaContent}>
               <h2 className={styles.ctaTitle}>Need a Custom Research Project?</h2>
               <p className={styles.ctaDescription}>
-                I can help you with your specific academic or business research needs. Let's discuss your project
+                I can help you with your specific academic or business research needs. Let&apos;s discuss your project
                 requirements.
               </p>
               <div className={styles.ctaButtons}>

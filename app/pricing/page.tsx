@@ -69,7 +69,7 @@ const faqItems = [
   {
     question: "How is the final price calculated?",
     answer:
-      "The final price is calculated based on the word count and the package you select. For projects requiring data analysis or specialized research, additional costs may apply. I'll provide a detailed quote after discussing your specific requirements.",
+      "The final price is calculated based on the word count and the package you select. For projects requiring data analysis or specialized research, additional costs may apply. I&apos;ll provide a detailed quote after discussing your specific requirements.",
   },
   {
     question: "What payment methods do you accept?",
@@ -94,7 +94,7 @@ const faqItems = [
   {
     question: "Do you offer discounts for returning clients or large projects?",
     answer:
-      "Yes, I offer loyalty discounts for returning clients and volume discounts for large projects. Please mention if you're a returning client when requesting a quote.",
+      "Yes, I offer loyalty discounts for returning clients and volume discounts for large projects. Please mention if you&apos;re a returning client when requesting a quote.",
   },
 ]
 
@@ -352,7 +352,7 @@ export default function PricingPage() {
 
                     <div className={styles.customNote}>
                       <p>
-                        Each project is unique, and I'm committed to providing fair and transparent pricing. Contact me
+                        Each project is unique, and I&apos;m committed to providing fair and transparent pricing. Contact me
                         with your specific requirements for a detailed quote.
                       </p>
                     </div>

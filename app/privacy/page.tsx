@@ -150,7 +150,7 @@ export default function PrivacyPage() {
               <div className={styles.privacyBlock}>
                 <h2 className={styles.privacyHeading}>1. Introduction</h2>
                 <p>
-                  Welcome to Wareesha Faisal's academic writing and research services. I respect your privacy and am
+                  Welcome to Wareesha Faisal&apos;s academic writing and research services. I respect your privacy and am
                   committed to protecting your personal data. This Privacy Policy explains how I collect, use, and
                   safeguard your information when you use my services.
                 </p>
@@ -317,7 +317,7 @@ export default function PrivacyPage() {
               </div>
 
               <div className={styles.privacyBlock}>
-                <h2 className={styles.privacyHeading}>11. Children's Privacy</h2>
+                <h2 className={styles.privacyHeading}>11. Children&apos;s Privacy</h2>
                 <p>
                   My services are not intended for individuals under the age of 18. I do not knowingly collect personal
                   information from children. If you are a parent or guardian and believe that your child has provided me
@@ -339,8 +339,8 @@ export default function PrivacyPage() {
                 <h2 className={styles.privacyHeading}>13. Changes to This Privacy Policy</h2>
                 <p>
                   I may update this Privacy Policy from time to time to reflect changes in my practices or for other
-                  operational, legal, or regulatory reasons. The updated version will be indicated by an updated "Last
-                  updated" date, and the updated version will be effective as soon as it is accessible.
+                  operational, legal, or regulatory reasons. The updated version will be indicated by an updated &quot;Last
+                  updated&quot; date, and the updated version will be effective as soon as it is accessible.
                 </p>
                 <p>
                   I encourage you to review this Privacy Policy regularly to stay informed about how I am protecting

@@ -193,7 +193,7 @@ export default function Home() {
                   Transforming <span className="gradient-text">Complex Ideas</span> Into Compelling Academic Narratives
                 </h1>
                 <p className={styles.heroDescription}>
-                  Hi, I'm Wareesha Faisal. I specialize in thesis writing, research papers, and comprehensive literature
+                  Hi, I&apos;m Wareesha Faisal. I specialize in thesis writing, research papers, and comprehensive literature
                   reviews that help scholars and professionals communicate their ideas effectively.
                 </p>
                 <div className={styles.heroButtons}>
@@ -329,7 +329,7 @@ export default function Home() {
               <div className={styles.aboutInfo}>
                 <h3 className={styles.aboutSubheading}>My Background</h3>
                 <p className={styles.aboutText}>
-                  With a strong academic foundation from Bahria University, Karachi, I've dedicated my career to helping
+                  With a strong academic foundation from Bahria University, Karachi, I&apos;ve dedicated my career to helping
                   others succeed in their academic and professional endeavors through exceptional writing and research
                   services.
                 </p>
@@ -355,7 +355,7 @@ export default function Home() {
                     isGradient
                     onClick={() => scrollToSection('contact')}
                   >
-                    Let's Collaborate
+                    Let&apos;s Collaborate
                   </Button>
                   <Button variant="outline">View Resume</Button>
                 </div>
@@ -765,8 +765,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <p className={styles.testimonialText}>
-                    "Wareesha's business report was detailed and data-driven. Her analysis provided valuable insights
-                    that helped our company make informed strategic decisions. Excellent work!"
+                    &quot;Wareesha&apos;s business report was detailed and data-driven. Her analysis provided valuable insights
+                    that helped our company make informed strategic decisions. Excellent work!&quot;
                   </p>
                   <div className={styles.testimonialAuthor}>
                     <div className={styles.testimonialAvatar}>
@@ -806,9 +806,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <p className={styles.testimonialText}>
-                    "Her literature review saved me weeks of research! Wareesha has an exceptional ability to synthesize
+                    &quot;Her literature review saved me weeks of research! Wareesha has an exceptional ability to synthesize
                     complex information into clear, coherent narratives. Highly recommended for any academic writing
-                    needs."
+                    needs.&quot;
                   </p>
                   <div className={styles.testimonialAuthor}>
                     <div className={styles.testimonialAvatar}>
@@ -848,9 +848,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <p className={styles.testimonialText}>
-                    "From technical reports to research papers, Wareesha delivers high-quality content every time. Her
+                    &quot;From technical reports to research papers, Wareesha delivers high-quality content every time. Her
                     attention to detail and ability to understand complex engineering concepts made her an invaluable
-                    resource for my academic journey."
+                    resource for my academic journey.&quot;
                   </p>
                   <div className={styles.testimonialAuthor}>
                     <div className={styles.testimonialAvatar}>
@@ -878,7 +878,7 @@ export default function Home() {
             <SectionHeading
               badge="Contact Me"
               title="Get In Touch"
-              description="Need help with your research? Let's discuss how I can assist with your academic needs."
+              description="Need help with your research? Let&apos;s discuss how I can assist with your academic needs."
             />
             <div className={styles.contactGrid}>
               <div className={styles.contactInfo}>

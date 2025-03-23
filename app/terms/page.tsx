@@ -150,7 +150,7 @@ export default function TermsPage() {
               <div className={styles.termsBlock}>
                 <h2 className={styles.termsHeading}>1. Introduction</h2>
                 <p>
-                  Welcome to Wareesha Faisal's academic writing and research services. These Terms of Service ("Terms")
+                  Welcome to Wareesha Faisal&apos;s academic writing and research services. These Terms of Service (&quot;Terms&quot;)
                   govern your use of my services, including the content, functionality, and services offered on this
                   website.
                 </p>
