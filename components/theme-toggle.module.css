@@ -1,0 +1,33 @@
+.themeToggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    color: var(--foreground);
+    transition: background-color 0.3s;
+  }
+  
+  .themeToggle:hover {
+    background-color: var(--secondary);
+  }
+  
+  .sunIcon,
+  .moonIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+  
+  .hidden {
+    transform: rotate(90deg) scale(0);
+    opacity: 0;
+  }
+  
+  
