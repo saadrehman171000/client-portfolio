@@ -5,8 +5,9 @@
     font-weight: 500;
     font-size: 0.75rem;
     line-height: 1;
-    padding: 0.25rem 0.75rem;
+    padding: 0.35rem 0.75rem;
     transition: all 0.2s;
+    letter-spacing: 0.025em;
   }
   
   .default {
@@ -14,10 +15,25 @@
     color: white;
   }
   
+  .secondary {
+    background-color: var(--secondary);
+    color: white;
+  }
+  
+  .accent {
+    background-color: var(--accent);
+    color: white;
+  }
+  
   .outline {
     background-color: transparent;
     border: 1px solid var(--primary);
-    color: var(--foreground);
+    color: var(--primary);
+  }
+  
+  .gradient {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    color: white;
   }
   
   

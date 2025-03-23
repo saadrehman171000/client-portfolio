@@ -1,29 +1,45 @@
 :root {
+  /* Modern Blue/Teal Color Scheme */
   --background: #ffffff;
-  --foreground: #0f0f0f;
-  --primary: #7c4dff;
-  --primary-light: #e8e0ff;
-  --primary-dark: #5e35b1;
-  --secondary: #f5f3ff;
-  --muted: #f1f1f1;
-  --muted-foreground: #6c6c6c;
-  --border: #e2e2e2;
+  --foreground: #0a1929;
+  --primary: #0070f3;
+  --primary-light: #e1f0ff;
+  --primary-dark: #0050b3;
+  --secondary: #00c2cb;
+  --secondary-light: #e0f7fa;
+  --secondary-dark: #00838f;
+  --accent: #ff6b6b;
+  --accent-light: #ffebee;
+  --accent-dark: #c62828;
+  --muted: #f5f5f5;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
   --radius: 0.5rem;
   --card: #ffffff;
-  --card-foreground: #0f0f0f;
+  --card-foreground: #0a1929;
+  --gradient-start: #0070f3;
+  --gradient-end: #00c2cb;
 }
 
 .dark {
-  --background: #0f0f0f;
-  --foreground: #f8f8f8;
-  --primary: #7c4dff;
-  --primary-light: #3a2a6e;
-  --secondary: #1a1a1a;
-  --muted: #1e1e1e;
-  --muted-foreground: #a0a0a0;
-  --border: #2a2a2a;
-  --card: #1a1a1a;
-  --card-foreground: #f8f8f8;
+  --background: #0a1929;
+  --foreground: #f8fafc;
+  --primary: #0090ff;
+  --primary-light: #0c2d48;
+  --primary-dark: #60a5fa;
+  --secondary: #00d5e0;
+  --secondary-light: #082b2e;
+  --secondary-dark: #5edfff;
+  --accent: #ff7e7e;
+  --accent-light: #3a1515;
+  --accent-dark: #ff9e9e;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --border: #1e293b;
+  --card: #0f2942;
+  --card-foreground: #f8fafc;
+  --gradient-start: #0090ff;
+  --gradient-end: #00d5e0;
 }
 
 * {
@@ -43,6 +59,7 @@ body {
   color: var(--foreground);
   background-color: var(--background);
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 a {
@@ -58,9 +75,12 @@ a {
 }
 
 .grid-pattern-bg {
-  background-image: linear-gradient(to right, rgba(124, 77, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(124, 77, 255, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: 
+    radial-gradient(var(--primary-light) 1px, transparent 1px),
+    radial-gradient(var(--secondary-light) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  background-attachment: fixed;
 }
 
 .glow-effect {
@@ -68,16 +88,16 @@ a {
 }
 
 .glow-effect::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle at center, rgba(124, 77, 255, 0.3), transparent 70%);
+  background: radial-gradient(circle at center, rgba(0, 112, 243, 0.15), transparent 70%);
   z-index: -1;
-  filter: blur(40px);
+  filter: blur(60px);
 }
 
 .backdrop-blur {
@@ -86,11 +106,39 @@ a {
 }
 
 .bg-glass {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .dark .bg-glass {
-  background-color: rgba(26, 26, 26, 0.7);
+  background-color: rgba(15, 41, 66, 0.8);
+  border: 1px solid rgba(30, 41, 59, 0.5);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+.gradient-border-content {
+  border-radius: calc(var(--radius) - 1px);
+  background: var(--background);
+  height: 100%;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
 }
 
 .sr-only {
@@ -105,9 +153,37 @@ a {
   border-width: 0;
 }
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
   }
 }
-
