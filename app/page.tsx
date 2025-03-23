@@ -11,6 +11,7 @@ import { Logo } from "@/components/logo"
 import { SectionHeading } from "@/components/section-heading"
 import { SkillBadge } from "@/components/skill-badge"
 import styles from "./page.module.css"
+import { ContactForm } from "@/components/contact-form"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -878,7 +879,7 @@ export default function Home() {
             <SectionHeading
               badge="Contact Me"
               title="Get In Touch"
-              description="Need help with your research? Let&apos;s discuss how I can assist with your academic needs."
+              description="Need help with your research? Let's discuss how I can assist with your academic needs."
             />
             <div className={styles.contactGrid}>
               <div className={styles.contactInfo}>
@@ -902,7 +903,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className={styles.contactItemTitle}>Email</h3>
-                      <p className={styles.contactItemText}>your-email@example.com</p>
+                      <p className={styles.contactItemText}>wareeshamalik8w@gmail.com</p>
                     </div>
                   </div>
                   <div className={styles.contactItem}>
@@ -923,7 +924,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className={styles.contactItemTitle}>Phone</h3>
-                      <p className={styles.contactItemText}>+92 XXX XXX XXXX</p>
+                      <p className={styles.contactItemText}>+92 315 3162029</p>
                     </div>
                   </div>
                   <div className={styles.contactItem}>
@@ -1037,40 +1038,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.contactForm}>
-                <div className={styles.formWrapper}>
-                  <h3 className={styles.formTitle}>Send a Message</h3>
-                  <form className={styles.form}>
-                    <div className={styles.formRow}>
-                      <div className={styles.formGroup}>
-                        <label htmlFor="name" className={styles.formLabel}>
-                          Name
-                        </label>
-                        <input id="name" className={styles.formInput} placeholder="Your name" />
-                      </div>
-                      <div className={styles.formGroup}>
-                        <label htmlFor="email" className={styles.formLabel}>
-                          Email
-                        </label>
-                        <input id="email" type="email" className={styles.formInput} placeholder="Your email" />
-                      </div>
-                    </div>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="subject" className={styles.formLabel}>
-                        Subject
-                      </label>
-                      <input id="subject" className={styles.formInput} placeholder="Subject" />
-                    </div>
-                    <div className={styles.formGroup}>
-                      <label htmlFor="message" className={styles.formLabel}>
-                        Message
-                      </label>
-                      <textarea id="message" className={styles.formTextarea} placeholder="Your message" rows={5} />
-                    </div>
-                    <Button isGradient className={styles.formButton}>
-                      Send Message
-                    </Button>
-                  </form>
-                </div>
+                <ContactForm />
               </div>
             </div>
           </div>
