@@ -17,6 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          href="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98"
+          as="image"
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

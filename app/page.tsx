@@ -45,6 +45,20 @@ export default function Home() {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const headerOffset = 80; // Adjust this value based on your header height
+      const elementPosition = section.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <div className={styles.pageWrapper}>
       <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}>
@@ -202,7 +216,11 @@ export default function Home() {
                   reviews that help scholars and professionals communicate their ideas effectively.
                 </p>
                 <div className={styles.heroButtons}>
-                  <Button size="lg" isGradient>
+                  <Button 
+                    size="lg" 
+                    isGradient 
+                    onClick={() => scrollToSection('works')}
+                  >
                     View My Portfolio
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +238,11 @@ export default function Home() {
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </Button>
-                  <Button variant="outline" size="lg">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    onClick={() => scrollToSection('contact')}
+                  >
                     Contact Me
                   </Button>
                 </div>
@@ -244,12 +266,14 @@ export default function Home() {
               <div className={styles.heroImageContainer}>
                 <div className={styles.heroImageWrapper}>
                   <Image
-                    src="/placeholder.svg?height=600&width=600"
+                    src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98"
                     alt="Wareesha Faisal"
                     width={500}
                     height={500}
                     className={styles.heroImage}
                     priority
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjgyPjA+OjU1RUVHSkdKTk1QUE9PREdPSk5NTkr/2wBDAR..."
                   />
                   <div className={styles.imageDecoration}></div>
                 </div>
@@ -311,11 +335,13 @@ export default function Home() {
               <div className={styles.aboutImage}>
                 <div className={styles.imageWrapper}>
                   <Image
-                    src="/placeholder.svg?height=600&width=600"
+                    src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc"
                     alt="About me image"
                     width={600}
                     height={600}
                     className={styles.aboutImg}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjgyPjA+OjU1RUVHSkdKTk1QUE9PREdPSk5NTkr/2wBDAR..."
                   />
                   <div className={styles.imageOverlay}></div>
                 </div>
@@ -346,7 +372,12 @@ export default function Home() {
                 </div>
 
                 <div className={styles.aboutCta}>
-                  <Button isGradient>Let's Collaborate</Button>
+                  <Button 
+                    isGradient
+                    onClick={() => scrollToSection('contact')}
+                  >
+                    Let's Collaborate
+                  </Button>
                   <Button variant="outline">View Resume</Button>
                 </div>
               </div>
@@ -584,11 +615,13 @@ export default function Home() {
               <div className={styles.workCard}>
                 <div className={styles.workImageContainer}>
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?w=800&q=75"
                     alt="Psychology research"
                     width={600}
                     height={400}
                     className={styles.workImage}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjgyPjA+OjU1RUVHSkdKTk1QUE9PREdPSk5NTkr/2wBDAR..."
                   />
                   <div className={styles.workImageOverlay}></div>
                   <Badge className={styles.workBadge}>Psychology</Badge>
@@ -621,11 +654,13 @@ export default function Home() {
               <div className={styles.workCard}>
                 <div className={styles.workImageContainer}>
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=75"
                     alt="Business research"
                     width={600}
                     height={400}
                     className={styles.workImage}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjgyPjA+OjU1RUVHSkdKTk1QUE9PREdPSk5NTkr/2wBDAR..."
                   />
                   <div className={styles.workImageOverlay}></div>
                   <Badge className={styles.workBadge} variant="secondary">
@@ -660,11 +695,13 @@ export default function Home() {
               <div className={styles.workCard}>
                 <div className={styles.workImageContainer}>
                   <Image
-                    src="/placeholder.svg?height=400&width=600"
+                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=75"
                     alt="Law research"
                     width={600}
                     height={400}
                     className={styles.workImage}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVigAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjgyPjA+OjU1RUVHSkdKTk1QUE9PREdPSk5NTkr/2wBDAR..."
                   />
                   <div className={styles.workImageOverlay}></div>
                   <Badge className={styles.workBadge} variant="accent">
@@ -753,7 +790,7 @@ export default function Home() {
                   <div className={styles.testimonialAuthor}>
                     <div className={styles.testimonialAvatar}>
                       <Image
-                        src="/placeholder.svg?height=100&width=100"
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&q=80"
                         alt="Dr. Hammad R."
                         width={50}
                         height={50}
@@ -795,7 +832,7 @@ export default function Home() {
                   <div className={styles.testimonialAuthor}>
                     <div className={styles.testimonialAvatar}>
                       <Image
-                        src="/placeholder.svg?height=100&width=100"
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
                         alt="Sana K."
                         width={50}
                         height={50}
@@ -837,7 +874,7 @@ export default function Home() {
                   <div className={styles.testimonialAuthor}>
                     <div className={styles.testimonialAvatar}>
                       <Image
-                        src="/placeholder.svg?height=100&width=100"
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
                         alt="M. Ahmed"
                         width={50}
                         height={50}
