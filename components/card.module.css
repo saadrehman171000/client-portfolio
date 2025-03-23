@@ -7,13 +7,24 @@
     transition: all 0.3s ease;
   }
   
-  .card:hover {
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+  .hoverable:hover {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
   }
   
-  .dark .card:hover {
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  .dark .hoverable:hover {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .glass {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .glass {
+    background-color: rgba(15, 41, 66, 0.7);
+    border: 1px solid rgba(30, 41, 59, 0.5);
   }
   
   .cardHeader {
@@ -29,7 +40,7 @@
     transition: color 0.3s ease;
   }
   
-  .card:hover .cardTitle {
+  .hoverable:hover .cardTitle {
     color: var(--primary);
   }
   

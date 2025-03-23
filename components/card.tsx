@@ -4,10 +4,18 @@ import styles from "./card.module.css"
 interface CardProps {
   children: React.ReactNode
   className?: string
+  isHoverable?: boolean
+  isGlass?: boolean
 }
 
-export function Card({ children, className = "" }: CardProps) {
-  return <div className={`${styles.card} ${className}`}>{children}</div>
+export function Card({ children, className = "", isHoverable = true, isGlass = false }: CardProps) {
+  return (
+    <div
+      className={`${styles.card} ${isHoverable ? styles.hoverable : ""} ${isGlass ? styles.glass : ""} ${className}`}
+    >
+      {children}
+    </div>
+  )
 }
 
 interface CardHeaderProps {
